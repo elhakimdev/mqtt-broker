@@ -1,0 +1,13 @@
+version: '3.9'
+services: 
+  broker:
+    container_name: mosquitto
+    image: eclipse-mosquitto:latest
+    restart: always
+    volumes: 
+      - ./mosquitto/config:/mosquitto/config
+      - ./mosquitto/data:/mosquitto/data
+      - ./mosquitto/log:/mosquitto/log
+    ports:
+      - 1883:1883
+      - 9001:9001
